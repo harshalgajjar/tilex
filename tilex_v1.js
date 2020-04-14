@@ -54,6 +54,7 @@ function tilexContract(elem){
   //actually removing the element
   setTimeout(function(){
     expandedTile.remove();
+    originalTile.style.opacity = 1;
   }, tilexSpeed);
 
   //removing the parent identifier
@@ -91,6 +92,8 @@ function tilexExpand(elem){
   expandedTile.id="tilex-expanded-tile";
   document.body.appendChild(expandedTile);
 
+  elem.style.opacity = '0';
+
   //adding a listener to close button
   var closeButton = expandedTile.getElementsByClassName("tilex-close-button")[0];
   closeButton.addEventListener("click", function(){
@@ -107,10 +110,6 @@ function tilexExpand(elem){
 
   largeDivContent.style.padding = (closeButton.offsetWidth+20) + "px";
 
-  //setting the max height of content to allow for scrolling
-  largeDivContent.style.maxHeight = (window.innerHeight) +"px";
-  largeDivContent.style.display = 'block';
-
   //setting width (before animation) for smoother animation and displaying the text and the close button
   largeDiv.style.width = '100vw';
   largeDiv.style.display = 'inline';
@@ -122,15 +121,25 @@ function tilexExpand(elem){
   $(expandedTile).animate({
     top: "0px",
     left: "0px",
-    bottom: "0px",
     right: "0px",
-    borderRadius: "0px"
+    borderRadius: "0px",
+    height: '100vh'
   }, tilexSpeed);
 
-  //animating close button's visibility
+  // animating close button's visibility
   $(closeButton).animate({
     'opacity': 1
   }, tilexSpeed);
+
+  //setting the max height of content to allow for scrolling
+
+
+
+  if(largeDivContent.offsetHeight>window.innerHeight){
+    largeDivContent.style.maxHeight = (window.innerHeight) +"px";
+  }
+
+  largeDivContent.style.display = 'block';
 
   //hiding .small and making .large appear
   $(smallDiv).animate({
