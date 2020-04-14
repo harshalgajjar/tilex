@@ -1,0 +1,70 @@
+/*
+(c) 2020 Harshal Gajjar (www.harshalgajjar.com)
+Tilex v1.0
+(tilex_v1.css) Available under MIT License
+*/
+
+.tilex-tile{
+  display: inline-block;
+  position: relative;
+  border-radius: 5px;
+}
+
+.tilex-tile > .tilex-large{
+  margin: auto;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+  display: none;
+}
+
+.tilex-large-content{
+  overflow: scroll;
+  display: none;
+}
+
+.tilex-center{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+
+.tilex-tile > .tilex-small{
+  margin: auto;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  opacity: 1;
+  display: inline;
+}
+
+.tilex-full-tile{
+  z-index: 99;
+  position:fixed;
+}
+
+.tilex-close-button{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  opacity: 0;
+  border: 0px;
+  margin: 0px;
+  background: none;
+  display: none;
+  margin-right: 15px;
+  font-size: 4em;
+  color: inherit;
+}
+
+.tilex-close-button-text:hover, .tilex-close-button-text:focus{
+  opacity: 0.5;
+}
+
+.tilex-close-button:active{
+  color: #ff3333;
+}
