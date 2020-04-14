@@ -42,6 +42,8 @@ function tilexContract(elem){
     'opacity': 0
   }, tilexSpeed);
 
+  originalTile.style.opacity = 1;
+
   //animating the tile to make it small
   $(expandedTile).animate({
     top: topOriginalTile+'px',
@@ -54,7 +56,6 @@ function tilexContract(elem){
   //actually removing the element
   setTimeout(function(){
     expandedTile.remove();
-    originalTile.style.opacity = 1;
   }, tilexSpeed);
 
   //removing the parent identifier
