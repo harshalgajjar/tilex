@@ -21,7 +21,8 @@ Tilex v1.0
 }
 
 .tilex-large-content{
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   width: auto;
   display: none;
 }
